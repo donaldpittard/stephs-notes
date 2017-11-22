@@ -1,0 +1,22 @@
+{
+  "name": "stephs-notes",
+  "version": "1.0.0",
+  "description": "Sticky Notes Application for Stephanie",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/donaldpittard/stephs-notes.git"
+  },
+  "author": "Donald Pittard <donaldpittard@gmail.com>",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/donaldpittard/stephs-notes/issues"
+  },
+  "homepage": "https://github.com/donaldpittard/stephs-notes#readme",
+  "dependencies": {
+    "alexa-sdk": "^1.0.20"
+  }
+}
