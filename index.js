@@ -5,7 +5,7 @@ var PORT = process.env.PORT || 8080;
 var app = express();
 
 // ALWAYS setup the alexa app and attach it to express before anything else.
-var alexaApp = new alexa.app("test");
+var alexaApp = new alexa.app("ask-alexa");
 
 alexaApp.express({
   expressApp: app,
@@ -29,8 +29,6 @@ app.set("view engine", "ejs");
 alexaApp.launch(function(request, response) {
   response.say("You launched the app!");
 });
-
-alexaApp.dictionary = { "names": ["matt", "joe", "bob", "bill", "mary", "jane", "dawn"] };
 
 alexaApp.intent("StephsNotesControlIntent", {
     "slots": { "color": "STEPHS_NOTES_COLOR", "noteText": "AMAZON.Literal" },
