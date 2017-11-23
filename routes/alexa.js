@@ -9,14 +9,14 @@ const handlers = {
     }
 }
 
-router.get('/', function(req, res, next) {
+router.post('/', function(req, res) {
+    exports.handler = function (event, context, callback) {
+        let alexa = Alexa.handler(event, context, callback)
+        alexa.registerHandlers(handlers)
+        alexa.execute()
+    }
+
     res.send('Hello Alexa!');
 })
-
-exports.handler = function (event, context, callback) {
-    let alexa = Alexa.handler(event, context, callback)
-    alexa.registerHandlers(handlers)
-    alexa.execute()
-}
 
 module.exports = router
