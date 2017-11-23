@@ -4,11 +4,18 @@ var favicon = require('serve-favicon');
 var logger = require('morgan');
 var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
+var alexaSdk = require('alexa-sdk');
 
 var index = require('./routes/index');
 var users = require('./routes/users');
 
 var app = express();
+
+var handlers = {
+  'StephsNotesControlIntent': function(color, text) {
+    this.emit(':tell', 'Hello World!');
+  }
+};
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
@@ -44,3 +51,8 @@ app.use(function(err, req, res, next) {
 });
 
 module.exports = app;
+exports.handler = function (event, context, callback) {
+  var alexa = alexaSdk.handler(event, context, callback);
+  alexa.registerHandlers(handlers);
+  alexa.execute();
+}
