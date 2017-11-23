@@ -33,10 +33,8 @@ alexaApp.launch(function(request, response) {
 alexaApp.dictionary = { "names": ["matt", "joe", "bob", "bill", "mary", "jane", "dawn"] };
 
 alexaApp.intent("StephsNotesControlIntent", {
-    "slots": { "NAME": "LITERAL" },
-    "utterances": [
-      "my {name is|name's} {names|NAME}", "set my name to {names|NAME}"
-    ]
+    "slots": { "color": "STEPHS_NOTES_COLOR", "noteText": "AMAZON.Literal" },
+    "utterances": []
   },
   function(request, response) {
     response.say("Success!");
