@@ -9,6 +9,10 @@ const handlers = {
     }
 }
 
+router.get('/', function(req, res, next) {
+    res.send('Hello Alexa!');
+})
+
 exports.handler = function (event, context, callback) {
     let alexa = Alexa.handler(event, context, callback)
     alexa.registerHandlers(handlers)
