@@ -1,6 +1,14 @@
 var express = require("express");
 var alexa = require("alexa-app");
-
+var COLORS = {
+  blue: 'blue',
+  yellow: 'yellow',
+  red: 'red',
+  cyan: 'cyan',
+  green: 'green',
+  orange: 'orange',
+  pink: 'pink'
+};
 var PORT = process.env.PORT || 8080;
 var app = express();
 
@@ -26,12 +34,25 @@ alexaApp.express({
 // from here on you can setup any other express routes or middlewares as normal
 app.set("view engine", "ejs");
 
+app.get('/', function(req, res) {
+  var notes = [
+    {
+      color: COLORS.pink,
+      text: 'HELLO STICKY NOTE WORLD!' 
+    }
+  ];
+  res.render('pages/index')
+});
+
 alexaApp.launch(function(request, response) {
   response.say("You launched the app!");
 });
 
 alexaApp.intent("StephsNotesControlIntent", {
-    "slots": { "color": "STEPHS_NOTES_COLOR", "noteText": "AMAZON.Literal" },
+    "slots": { 
+      "color": "STEPHS_NOTES_COLOR", 
+      "noteText": "AMAZON.Literal" 
+    },
     "utterances": []
   },
   function(request, response) {
