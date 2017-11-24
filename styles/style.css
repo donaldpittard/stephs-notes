@@ -29,7 +29,7 @@ ul#stickies li {
 	overflow: hidden;
 } 
 
-ul#stickies li span.sticky {
+ul#stickies li.sticky {
 	font-family: Permanent Marker, Helvetica, sans-serif;
 	font-size: 200%;
 }
