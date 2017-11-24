@@ -49,6 +49,10 @@ app.get('/', function(req, res) {
   res.render('pages/index', {notes: notes});
 });
 
+app.get('/about', function(req, res) {
+  res.render('pages/about');
+});
+
 app.use(express.static(__dirname + '/'));
 
 alexaApp.launch(function(request, response) {
