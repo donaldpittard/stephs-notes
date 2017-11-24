@@ -1,3 +1,5 @@
 <ul id="stickies">
-    
+<% notes.forEach((note) => { %>
+    <li class="<%= note.color %>"><%= note.text %></li>
+<%})%>
 </ul>

@@ -35,14 +35,16 @@ alexaApp.express({
 app.set("view engine", "ejs");
 
 app.get('/', function(req, res) {
-  var notes = [
-    {
-      color: COLORS.pink,
-      text: 'HELLO STICKY NOTE WORLD!' 
-    }
+  var notes = [];
+  notes = [
+    {color: COLORS.pink, text: 'HELLO STICKY NOTE WORLD!'},
+    {color: COLORS.blue, text: 'Welcome to Steph\'s notes'}
   ];
-  res.render('pages/index')
+
+  res.render('pages/index', {notes: notes});
 });
+
+app.use(express.static(__dirname + '/'));
 
 alexaApp.launch(function(request, response) {
   response.say("You launched the app!");

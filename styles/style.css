@@ -1,10 +1,4 @@
 
-
-body {
-	background-color: #dbdbdb;
-	font-size: 100%;
-}
-
 form input#note_content {
 	width: 350px;
 }
