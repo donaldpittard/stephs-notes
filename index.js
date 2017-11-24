@@ -38,7 +38,12 @@ app.get('/', function(req, res) {
   var notes = [];
   notes = [
     {color: COLORS.pink, text: 'HELLO STICKY NOTE WORLD!'},
-    {color: COLORS.blue, text: 'Welcome to Steph\'s notes'}
+    {color: COLORS.blue, text: 'Welcome to Steph\'s notes'},
+    {color: COLORS.red, text: 'Testing out the stickies'},
+    {color: COLORS.cyan, text: 'Test this notes application'},
+    {color: COLORS.orange, text: 'Try this out with Alexa'},
+    {color: COLORS.green, text: 'Heroku is pretty nifty'},
+    {color: COLORS.yellow, text: 'Learn express js'}
   ];
 
   res.render('pages/index', {notes: notes});
